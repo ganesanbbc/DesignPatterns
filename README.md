@@ -2,9 +2,13 @@
 
 This app contains the design pattern samples
 
-Sample for JUNIT with hamcrest - (/)
+Sample for JUNIT with hamcrest - (Done)
 
-MVP
+MVP - (Done)
+
+Expresso Sample - Done
+
+Cucumber Sample 
 
 Data Fetcher Factory
 
