@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import de.greenrobot.event.EventBus;
+
 public class MainActivity extends AppCompatActivity implements MainActivityPresenterListener {
 
     private MainActivityPresenter mainActivityPresenter;
@@ -30,4 +32,15 @@ public class MainActivity extends AppCompatActivity implements MainActivityPrese
     public void updateStatus() {
         ((TextView) findViewById(R.id.textView)).setText("Status Updated");
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        EventBus.getDefault().register(this);
+    }
+
+    public void onEvent(UpdateStatusEvent event) {
+        System.out.println("Called " + event.getMessage());
+    }
+
 }

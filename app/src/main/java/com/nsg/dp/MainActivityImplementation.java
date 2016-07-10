@@ -1,5 +1,7 @@
 package com.nsg.dp;
 
+import de.greenrobot.event.EventBus;
+
 /**
  * Created by varshika on 09/07/16.
  */
@@ -14,5 +16,6 @@ public class MainActivityImplementation implements MainActivityPresenter{
     @Override
     public void updateStatus() {
         listener.updateStatus();
+        EventBus.getDefault().post(new UpdateStatusEvent("Update Event Occure"));
     }
 }
