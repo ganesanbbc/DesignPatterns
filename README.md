@@ -2,7 +2,7 @@
 
 This app contains the design pattern samples
 
-Sample for JUNIT with hamcrest
+Sample for JUNIT with hamcrest - (/)
 
 MVP
 
