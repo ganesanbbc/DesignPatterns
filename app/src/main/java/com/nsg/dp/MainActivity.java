@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.nsg.dp.events.UpdateStatusEvent;
+
 import de.greenrobot.event.EventBus;
 
 public class MainActivity extends AppCompatActivity implements MainActivityPresenterListener {

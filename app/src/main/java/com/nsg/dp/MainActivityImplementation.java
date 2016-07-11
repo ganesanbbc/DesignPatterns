@@ -1,5 +1,7 @@
 package com.nsg.dp;
 
+import com.nsg.dp.events.UpdateStatusEvent;
+
 import de.greenrobot.event.EventBus;
 
 /**

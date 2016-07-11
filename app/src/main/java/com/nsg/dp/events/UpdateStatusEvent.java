@@ -1,4 +1,4 @@
-package com.nsg.dp;
+package com.nsg.dp.events;
 
 /**
  * Created by varshika on 10/07/16.
