@@ -24,4 +24,15 @@ public class AlgorithmSamples {
 
         return format;
     }
+
+    public int getDivisibleSumPairs(int[] array, int divisibleSum) {
+
+        int count = 0;
+        for (int i = 0; i < array.length; i++) {
+            for (int i1 = i + 1; i1 < array.length; i1++) {
+                count += (array[i] + array[i1]) % divisibleSum == 0 ? 1 : 0;
+            }
+        }
+        return count;
+    }
 }
