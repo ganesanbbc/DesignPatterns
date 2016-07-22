@@ -43,4 +43,14 @@ public class AlgorithamWarmUpTest {
         actualCount = algorithamWarmUp.getDivisibleSumPairs(array, divisibleSum);
         assertThat(actualCount, is(5));
     }
+
+    @Test
+    public void thatMinimumDistances() {
+        int actualMinDist = 0;
+        int[] array = {1, 3, 2, 6, 1, 2};
+        actualMinDist = algorithamWarmUp.getMinimumDistances(array);
+        assertThat(actualMinDist, is(3));
+
+
+    }
 }

@@ -35,4 +35,21 @@ public class AlgorithmSamples {
         }
         return count;
     }
+
+    public int getMinimumDistances(int[] array) {
+        int minDistances = -1;
+        for (int i = 0; i < array.length; i++) {
+            int dist = 0;
+            for (int i1 = i + 1; i1 < array.length; i1++) {
+                dist++;
+                if(array[i] == array[i1]){
+                    if(minDistances==-1 || minDistances>dist) {
+                        minDistances = dist;
+                    }
+                    break;
+                }
+            }
+        }
+        return minDistances;
+    }
 }
