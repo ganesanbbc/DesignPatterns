@@ -1,6 +1,6 @@
 package com.nsg.dp;
 
-import com.nsg.dp.hackerrank.AlgorithamWarmUp;
+import com.nsg.dp.hackerrank.AlgorithmSamples;
 
 import org.testng.annotations.Test;
 
@@ -20,7 +20,7 @@ public class AlgorithamWarmUpTest {
         String dateInString = "7:10:56PM";
         String givenPattern = "hh:mm:ssa";
 
-        AlgorithamWarmUp algorithamWarmUp = new AlgorithamWarmUp();
+        AlgorithmSamples algorithamWarmUp = new AlgorithmSamples();
         actualTime = algorithamWarmUp.get24_Hourstime(dateInString, givenPattern);
 
         assertThat(actualTime, is(expected));

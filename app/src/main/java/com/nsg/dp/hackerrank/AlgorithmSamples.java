@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * Created by varshika on 20/07/16.
  */
-public class AlgorithamWarmUp {
+public class AlgorithmSamples {
 
 
     public static final String HH_MM_SS = "HH:mm:ss";
