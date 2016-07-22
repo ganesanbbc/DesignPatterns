@@ -11,7 +11,6 @@ import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.nsg.dp.events.UpdateStatusEvent;
-import com.nsg.dp.java8.JavaNewFeatures;
 
 import de.greenrobot.event.EventBus;
 
@@ -57,9 +56,6 @@ public class MainActivity extends AppCompatActivity implements MainActivityPrese
     }
 
     public void onEvent(UpdateStatusEvent event) {
-
-        JavaNewFeatures.usingLambda();
-//        new JavaNewFeatures().defaultMethod();
         System.out.println("Called " + event.getMessage());
 
     }
