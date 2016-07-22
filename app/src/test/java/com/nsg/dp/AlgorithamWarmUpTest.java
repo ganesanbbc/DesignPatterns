@@ -1,10 +1,11 @@
 package com.nsg.dp;
 
+import com.nsg.dp.hackerrank.AlgorithamWarmUp;
+
 import org.testng.annotations.Test;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
 
 /**
  * Created by varshika on 20/07/16.
@@ -13,18 +14,15 @@ public class AlgorithamWarmUpTest {
 
 
     @Test
-    public void test(){
-        SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");
+    public void thatPrintTimeAs25HrsFormatWhenTimePass12HrsFormat() {
+        String actualTime = "";
+        String expected = "19:10:56";
         String dateInString = "7:10:56PM";
-//        SimpleDateFormat formatter1 = new SimpleDateFormat("HH:mm:ss");
+        String givenPattern = "hh:mm:ssa";
 
-        try {
+        AlgorithamWarmUp algorithamWarmUp = new AlgorithamWarmUp();
+        actualTime = algorithamWarmUp.get24_Hourstime(dateInString, givenPattern);
 
-            Date date = formatter.parse(dateInString);
-            System.out.println(formatter.format(date));
-
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+        assertThat(actualTime, is(expected));
     }
 }
