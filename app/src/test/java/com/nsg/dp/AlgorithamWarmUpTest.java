@@ -50,7 +50,14 @@ public class AlgorithamWarmUpTest {
         int[] array = {1, 3, 2, 6, 1, 2};
         actualMinDist = algorithamWarmUp.getMinimumDistances(array);
         assertThat(actualMinDist, is(3));
+    }
+
+    @Test
+    public void thatAngryProfessor(){
 
 
+        String expectedDicision = "Yes";
+        String actualDicision = algorithamWarmUp.hasClassCancelled();
+        assertThat(actualDicision, is(expectedDicision));
     }
 }

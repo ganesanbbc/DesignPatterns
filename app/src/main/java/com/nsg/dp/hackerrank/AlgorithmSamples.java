@@ -42,8 +42,8 @@ public class AlgorithmSamples {
             int dist = 0;
             for (int i1 = i + 1; i1 < array.length; i1++) {
                 dist++;
-                if(array[i] == array[i1]){
-                    if(minDistances==-1 || minDistances>dist) {
+                if (array[i] == array[i1]) {
+                    if (minDistances == -1 || minDistances > dist) {
                         minDistances = dist;
                     }
                     break;
@@ -51,5 +51,15 @@ public class AlgorithmSamples {
             }
         }
         return minDistances;
+    }
+
+    /**
+     * A Discrete Mathematics professor has a class of  students. Frustrated with their lack of discipline,
+     * he decides to cancel class if fewer than  students are present when class starts.
+     * Given the arrival time of each student, determine if the class is canceled.
+     */
+
+    public String hasClassCancelled() {
+        return null;
     }
 }
