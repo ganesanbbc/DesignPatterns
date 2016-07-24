@@ -2,7 +2,9 @@ package com.nsg.dp.hackerrank;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by varshika on 20/07/16.
@@ -77,5 +79,41 @@ public class AlgorithmSamples {
         }
 
         return result;
+    }
+
+    public int findMinHeight(List<List<Integer>> stacks) {
+        int minHeight = Integer.MAX_VALUE;
+        for (List<Integer> stack : stacks) {
+            int sum = getSum(stack);
+            minHeight = sum < minHeight ? sum : minHeight;
+        }
+        return minHeight;
+    }
+
+    public boolean isAllStackSameWeight(List<List<Integer>> stacks) {
+
+        boolean hasSameWeight = true;
+        List<Integer> stackWeights = new ArrayList<>();
+        for (List<Integer> stack : stacks) {
+            int sum = getSum(stack);
+            stackWeights.add(sum);
+        }
+
+        int someWeight = stackWeights.get(0);
+        for (int i = 1; i < stackWeights.size(); i++) {
+            if (someWeight != stackWeights.get(i)) {
+                hasSameWeight = false;
+                break;
+            }
+        }
+        return hasSameWeight;
+    }
+
+    private int getSum(List<Integer> stack) {
+        int sum = 0;
+        for (Integer integer : stack) {
+            sum += integer;
+        }
+        return sum;
     }
 }
