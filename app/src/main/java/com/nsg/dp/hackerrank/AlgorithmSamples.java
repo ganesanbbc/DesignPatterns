@@ -57,9 +57,25 @@ public class AlgorithmSamples {
      * A Discrete Mathematics professor has a class of  students. Frustrated with their lack of discipline,
      * he decides to cancel class if fewer than  students are present when class starts.
      * Given the arrival time of each student, determine if the class is canceled.
+     *
+     * @param a
+     * @param thresholdValue
      */
 
-    public String hasClassCancelled() {
-        return null;
+    public String hasClassCancelled(int[] a, int thresholdValue) {
+
+        String result = "YES";
+        int inTimeCount = 0;
+        for (int i : a) {
+            if (i >= 0) {
+                inTimeCount++;
+                if (inTimeCount >= thresholdValue) {
+                    result = "NO";
+                    break;
+                }
+            }
+        }
+
+        return result;
     }
 }

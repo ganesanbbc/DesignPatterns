@@ -53,11 +53,20 @@ public class AlgorithamWarmUpTest {
     }
 
     @Test
-    public void thatAngryProfessor(){
+    public void thatAngryProfessorHasCancelledClassWhenStudentDoesNotMeetExpectation(){
+        String expectedDicision = "YES";
+        int[] a = {-1, -3, 4, 2};
+        int thresholdValue = 3;
+        String actualDicision = algorithamWarmUp.hasClassCancelled(a, thresholdValue);
+        assertThat(actualDicision, is(expectedDicision));
+    }
 
-
-        String expectedDicision = "Yes";
-        String actualDicision = algorithamWarmUp.hasClassCancelled();
+    @Test
+    public void thatAngryProfessorHasNotCancelledClassWhenStudentDoesMeetExpectation(){
+        String expectedDicision = "NO";
+        int[] a = {0, -1, 2, 1};
+        int thresholdValue = 2;
+        String actualDicision = algorithamWarmUp.hasClassCancelled(a, thresholdValue);
         assertThat(actualDicision, is(expectedDicision));
     }
 }
