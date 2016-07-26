@@ -81,6 +81,20 @@ public class AlgorithmSamples {
         return result;
     }
 
+    /**
+     * You have three stacks of cylinders where each cylinder has the same diameter, but they may vary in height.
+     * You can change the height of a stack by removing and discarding its topmost cylinder any number of times.
+     * <p/>
+     * Find the maximum possible height of the stacks such that all of the stacks are exactly the same height.
+     * This means you must remove zero or more cylinders from the top of zero or more of the three stacks until
+     * they're all the same height, then print the height. The removals must be performed in such a way as to maximize the height.
+     * <p/>
+     * Note: An empty stack is still a stack.
+     *
+     * @param stacks
+     * @return
+     */
+
     public int findMinHeight(List<List<Integer>> stacks) {
         int minHeight = Integer.MAX_VALUE;
         for (List<Integer> stack : stacks) {
@@ -100,8 +114,8 @@ public class AlgorithmSamples {
         }
 
         int someWeight = stackWeights.get(0);
-        for (int i = 1; i < stackWeights.size(); i++) {
-            if (someWeight != stackWeights.get(i)) {
+        for (Integer stackWeight : stackWeights) {
+            if (someWeight != stackWeight) {
                 hasSameWeight = false;
                 break;
             }
@@ -116,4 +130,50 @@ public class AlgorithmSamples {
         }
         return sum;
     }
+
+
+    public int getEqualStackWeight(List<List<Integer>> stacks) {
+
+        int minHeight = findMinHeight(stacks);
+        while (!isAllStackSameWeight(stacks)) {
+            List<Integer> indexList = findMAxWeightStackIndex(stacks, minHeight);
+            for (Integer integer : indexList) {
+                resizeStack(stacks.get(integer), minHeight);
+            }
+            minHeight = findMinHeight(stacks);
+        }
+        return findMinHeight(stacks);
+    }
+
+    private void resizeStack(List<Integer> integers, int minHeight) {
+        List<Integer> tempStack = new ArrayList<>();
+
+        int sum = 0;
+        for (Integer integer : integers) {
+            sum += integer;
+            if (sum <= minHeight) {
+                tempStack.add(integer);
+            } else {
+                break;
+            }
+        }
+        integers.clear();
+        integers.addAll(tempStack);
+    }
+
+    private List<Integer> findMAxWeightStackIndex(List<List<Integer>> stacks, int minHeight) {
+        List<Integer> index = new ArrayList<>();
+        int i = 0;
+        for (List<Integer> stack : stacks) {
+            int sum = getSum(stack);
+            if (sum != minHeight) {
+                index.add(i);
+            }
+            i++;
+        }
+        return index;
+    }
+
+
+
 }

@@ -132,4 +132,27 @@ public class AlgorithamWarmUpTest {
         assertTrue(hasSameWeight);
     }
 
+    @Test
+    public void thatGetStackEquaWeight() {
+
+
+        int actualStackHeight;
+        int expectedHeight = 10;
+
+        List<List<Integer>> stacks = new ArrayList<>();
+        stacks.add(new ArrayList<Integer>() {{
+            add(10);
+            add(10);
+        }});
+
+        stacks.add(new ArrayList<Integer>() {{
+            add(10);
+            add(20);
+        }});
+
+        actualStackHeight = algorithamWarmUp.getEqualStackWeight(stacks);
+
+        assertThat(actualStackHeight, is(expectedHeight));
+    }
+
 }
