@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.nsg.dp.dao.AssetDataFetcher;
+import com.nsg.dp.dao.DataFetcher;
+import com.nsg.dp.dao.DataFetcherCallBack;
 import com.nsg.dp.events.UpdateStatusEvent;
 import com.nsg.dp.multirecycleview.MultiRecycleViewFragment;
 
@@ -59,7 +62,16 @@ public class MainActivity extends AppCompatActivity implements MainActivityPrese
         super.onResume();
         EventBus.getDefault().register(this);
 
+        DataFetcher dataFetcher = new AssetDataFetcher(this,"config");
+        dataFetcher.fetch(new DataFetcherCallBack(){
 
+            @Override
+            public void onSuccess(byte[] data) {
+                String configData = new String(data);
+                ((TextView) findViewById(R.id.textView)).setText(configData);
+
+            }
+        });
     }
 
     public void onEvent(UpdateStatusEvent event) {
