@@ -16,6 +16,7 @@ import java.util.List;
 public class RecycleViewSampleAdapter extends RecyclerView.Adapter<RecycleViewSampleAdapter.MyViewHolder> {
 
     private List<String> dataSet;
+    private RecycleViewClickListener recycleViewClickListener;
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -37,15 +38,28 @@ public class RecycleViewSampleAdapter extends RecyclerView.Adapter<RecycleViewSa
         this.dataSet = dataSet;
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder {
+    public void setClickListener(RecycleViewClickListener recycleViewClickListener) {
+        this.recycleViewClickListener = recycleViewClickListener;
+    }
+
+
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private final TextView textView;
 
         public MyViewHolder(View itemView) {
             super(itemView);
             textView = (TextView) itemView.findViewById(R.id.itemtext1);
+            itemView.setOnClickListener(this);
         }
 
 
+        @Override
+        public void onClick(View view) {
+            RecycleViewSampleAdapter.this.recycleViewClickListener.onItemClick(getPosition());
+        }
     }
 
+    public interface RecycleViewClickListener {
+        void onItemClick(int position);
+    }
 }

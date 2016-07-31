@@ -8,8 +8,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.nsg.dp.R;
+import com.nsg.dp.fragement.RecycleViewSampleAdapter.RecycleViewClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,11 +34,23 @@ public class RecycleViewSample extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         recycleView = (RecyclerView) view.findViewById(R.id.recycleview);
+        initRecycleView();
+    }
+
+    private void initRecycleView() {
         recycleView.setHasFixedSize(true);
         recycleView.setLayoutManager(new LinearLayoutManager(getActivity()));
         adapter = new RecycleViewSampleAdapter();
         adapter.setDataSet(getDataSet());
         recycleView.setAdapter(adapter);
+        adapter.setClickListener(new RecycleViewClickListener() {
+
+            @Override
+            public void onItemClick(int position) {
+                Toast.makeText(getActivity(), "sample" + position, Toast.LENGTH_LONG).show();
+            }
+        });
+
     }
 
     private List<String> getDataSet() {
