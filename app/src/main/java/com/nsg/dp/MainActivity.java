@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.nsg.dp.events.UpdateStatusEvent;
-import com.nsg.dp.fragment.SimpleRecycleViewFragment;
+import com.nsg.dp.multirecycleview.MultiRecycleViewFragment;
 
 import de.greenrobot.event.EventBus;
 
@@ -40,7 +40,8 @@ public class MainActivity extends AppCompatActivity implements MainActivityPrese
 
     private void loadFragment() {
         ft = getSupportFragmentManager().beginTransaction();
-        SimpleRecycleViewFragment fragmentDemo = SimpleRecycleViewFragment.getInstance();
+//        SimpleRecycleViewFragment fragmentDemo = SimpleRecycleViewFragment.getInstance();
+        MultiRecycleViewFragment fragmentDemo = MultiRecycleViewFragment.getInstance();
         ft.add(R.id.container, fragmentDemo,"sample");
         ft.commit();
     }
@@ -49,8 +50,8 @@ public class MainActivity extends AppCompatActivity implements MainActivityPrese
     public void updateStatus() {
         ((TextView) findViewById(R.id.textView)).setText("Status Updated");
 
-        SimpleRecycleViewFragment fragmentDemo = (SimpleRecycleViewFragment) getSupportFragmentManager().findFragmentById(R.id.container);
-        fragmentDemo.reloadData();
+//        SimpleRecycleViewFragment fragmentDemo = (SimpleRecycleViewFragment) getSupportFragmentManager().findFragmentById(R.id.container);
+//        fragmentDemo.reloadData();
     }
 
     @Override
