@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityPrese
     private MainActivityPresenter mainActivityPresenter;
     private Button button;
     private LinearLayout container;
+    private FragmentTransaction ft;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityPrese
     }
 
     private void loadFragment() {
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft = getSupportFragmentManager().beginTransaction();
         RecycleViewSample fragmentDemo = RecycleViewSample.getInstance();
         ft.add(R.id.container, fragmentDemo,"sample");
         ft.commit();
@@ -47,6 +48,9 @@ public class MainActivity extends AppCompatActivity implements MainActivityPrese
     @Override
     public void updateStatus() {
         ((TextView) findViewById(R.id.textView)).setText("Status Updated");
+
+        RecycleViewSample fragmentDemo = (RecycleViewSample) getSupportFragmentManager().findFragmentById(R.id.container);
+        fragmentDemo.reloadData();
     }
 
     @Override

@@ -67,4 +67,9 @@ public class RecycleViewSample extends Fragment {
     public static RecycleViewSample getInstance() {
         return new RecycleViewSample();
     }
+
+    public void reloadData() {
+        adapter.setDataSet(getDataSet());
+        adapter.notifyDataSetChanged();
+    }
 }
