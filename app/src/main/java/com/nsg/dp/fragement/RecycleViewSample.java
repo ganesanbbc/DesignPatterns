@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.nsg.dp.R;
 import com.nsg.dp.fragement.RecycleViewSampleAdapter.RecycleViewClickListener;
@@ -44,10 +43,13 @@ public class RecycleViewSample extends Fragment {
         adapter.setDataSet(getDataSet());
         recycleView.setAdapter(adapter);
         adapter.setClickListener(new RecycleViewClickListener() {
-
             @Override
             public void onItemClick(int position) {
-                Toast.makeText(getActivity(), "sample" + position, Toast.LENGTH_LONG).show();
+                if(position%2==0) {
+                    adapter.addItem(position);
+                }else{
+                    adapter.removeItem(position);
+                }
             }
         });
 

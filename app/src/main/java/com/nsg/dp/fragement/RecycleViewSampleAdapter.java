@@ -42,6 +42,16 @@ public class RecycleViewSampleAdapter extends RecyclerView.Adapter<RecycleViewSa
         this.recycleViewClickListener = recycleViewClickListener;
     }
 
+    public void addItem(int i) {
+        dataSet.add(i, "new Item" + i);
+        notifyItemChanged(i);
+    }
+
+    public void removeItem(int i) {
+        dataSet.remove(i);
+        notifyItemChanged(i);
+    }
+
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private final TextView textView;
