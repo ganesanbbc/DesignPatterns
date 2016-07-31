@@ -1,4 +1,4 @@
-package com.nsg.dp.fragement;
+package com.nsg.dp.fragment;
 
 
 import android.content.Context;

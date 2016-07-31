@@ -1,4 +1,4 @@
-package com.nsg.dp.fragement;
+package com.nsg.dp.fragment;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by varshika on 31/07/16.
  */
-public class RecycleViewSampleAdapter extends RecyclerView.Adapter<RecycleViewSampleAdapter.MyViewHolder> {
+public class SimpleRecycleViewSampleAdapter extends RecyclerView.Adapter<SimpleRecycleViewSampleAdapter.MyViewHolder> {
 
     private List<String> dataSet;
     private RecycleViewClickListener recycleViewClickListener;
@@ -65,7 +65,7 @@ public class RecycleViewSampleAdapter extends RecyclerView.Adapter<RecycleViewSa
 
         @Override
         public void onClick(View view) {
-            RecycleViewSampleAdapter.this.recycleViewClickListener.onItemClick(getPosition());
+            SimpleRecycleViewSampleAdapter.this.recycleViewClickListener.onItemClick(getPosition());
         }
     }
 

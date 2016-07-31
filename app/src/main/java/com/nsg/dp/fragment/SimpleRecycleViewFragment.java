@@ -1,4 +1,4 @@
-package com.nsg.dp.fragement;
+package com.nsg.dp.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.nsg.dp.R;
-import com.nsg.dp.fragement.RecycleViewSampleAdapter.RecycleViewClickListener;
+import com.nsg.dp.fragment.SimpleRecycleViewSampleAdapter.RecycleViewClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,10 +18,10 @@ import java.util.List;
 /**
  * Created by varshika on 31/07/16.
  */
-public class RecycleViewSample extends Fragment {
+public class SimpleRecycleViewFragment extends Fragment {
 
     private RecyclerView recycleView;
-    private RecycleViewSampleAdapter adapter;
+    private SimpleRecycleViewSampleAdapter adapter;
 
     @Nullable
     @Override
@@ -39,7 +39,7 @@ public class RecycleViewSample extends Fragment {
     private void initRecycleView() {
         recycleView.setHasFixedSize(true);
         recycleView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        adapter = new RecycleViewSampleAdapter();
+        adapter = new SimpleRecycleViewSampleAdapter();
         adapter.setDataSet(getDataSet());
         recycleView.setAdapter(adapter);
         adapter.setClickListener(new RecycleViewClickListener() {
@@ -64,8 +64,8 @@ public class RecycleViewSample extends Fragment {
     }
 
 
-    public static RecycleViewSample getInstance() {
-        return new RecycleViewSample();
+    public static SimpleRecycleViewFragment getInstance() {
+        return new SimpleRecycleViewFragment();
     }
 
     public void reloadData() {
