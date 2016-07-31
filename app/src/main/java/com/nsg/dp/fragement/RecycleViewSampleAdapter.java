@@ -44,12 +44,14 @@ public class RecycleViewSampleAdapter extends RecyclerView.Adapter<RecycleViewSa
 
     public void addItem(int i) {
         dataSet.add(i, "new Item" + i);
-        notifyItemChanged(i);
+        notifyItemInserted(i);
+//        notifyItemChanged(i);
     }
 
     public void removeItem(int i) {
         dataSet.remove(i);
-        notifyItemChanged(i);
+        notifyItemRemoved(i);
+//        notifyItemChanged(i);
     }
 
 

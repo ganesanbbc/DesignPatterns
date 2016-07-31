@@ -57,7 +57,7 @@ public class RecycleViewSample extends Fragment {
 
     private List<String> getDataSet() {
         List<String> data = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 25; i++) {
             data.add("Position::" + i);
         }
         return data;
