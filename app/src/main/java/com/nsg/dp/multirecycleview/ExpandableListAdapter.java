@@ -1,6 +1,7 @@
 package com.nsg.dp.multirecycleview;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,7 +40,8 @@ public class ExpandableListAdapter extends RecyclerView.Adapter<RecyclerView.Vie
             case CHILD:
                 TextView itemTextView = new TextView(context);
                 itemTextView.setPadding(subItemPaddingLeft, subItemPaddingTopAndBottom, 0, subItemPaddingTopAndBottom);
-                itemTextView.setTextColor(0x88000000);
+                itemTextView.setTextColor(Color.WHITE);
+                itemTextView.setBackgroundResource(R.color.colorAccent);
                 itemTextView.setLayoutParams(
                         new ViewGroup.LayoutParams(
                                 ViewGroup.LayoutParams.MATCH_PARENT,
