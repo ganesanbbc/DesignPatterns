@@ -1,4 +1,4 @@
-package com.nsg.dp.dao;
+package com.nsg.dp.dao.fetcher;
 
 import android.content.Context;
 

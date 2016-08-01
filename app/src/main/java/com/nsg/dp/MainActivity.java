@@ -8,9 +8,9 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.nsg.dp.dao.AssetDataFetcher;
-import com.nsg.dp.dao.DataFetcher;
-import com.nsg.dp.dao.DataFetcherCallBack;
+import com.nsg.dp.dao.fetcher.AssetDataFetcher;
+import com.nsg.dp.dao.fetcher.DataFetcher;
+import com.nsg.dp.dao.fetcher.DataFetcherCallBack;
 import com.nsg.dp.events.UpdateStatusEvent;
 import com.nsg.dp.multirecycleview.MultiRecycleViewFragment;
 
