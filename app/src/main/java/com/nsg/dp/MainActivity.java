@@ -12,7 +12,7 @@ import com.nsg.dp.dao.fetcher.AssetDataFetcher;
 import com.nsg.dp.dao.fetcher.DataFetcher;
 import com.nsg.dp.dao.fetcher.DataFetcherCallBack;
 import com.nsg.dp.events.UpdateStatusEvent;
-import com.nsg.dp.multirecycleview.MultiRecycleViewFragment;
+import com.nsg.dp.multirecycleview.ExpandableRecycleViewFragment;
 
 import de.greenrobot.event.EventBus;
 
@@ -44,7 +44,8 @@ public class MainActivity extends AppCompatActivity implements MainActivityPrese
     private void loadFragment() {
         ft = getSupportFragmentManager().beginTransaction();
 //        SimpleRecycleViewFragment fragmentDemo = SimpleRecycleViewFragment.getInstance();
-        MultiRecycleViewFragment fragmentDemo = MultiRecycleViewFragment.getInstance();
+//        MultiRecycleViewFragment fragmentDemo = MultiRecycleViewFragment.getInstance();
+        ExpandableRecycleViewFragment fragmentDemo = ExpandableRecycleViewFragment.getInstance();
         ft.add(R.id.container, fragmentDemo,"sample");
         ft.commit();
     }
