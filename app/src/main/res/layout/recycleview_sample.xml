@@ -18,6 +18,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Fragment"
         android:id="@+id/textView2"
+        android:clipToPadding="false"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"

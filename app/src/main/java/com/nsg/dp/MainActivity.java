@@ -12,7 +12,7 @@ import com.nsg.dp.dao.fetcher.AssetDataFetcher;
 import com.nsg.dp.dao.fetcher.DataFetcher;
 import com.nsg.dp.dao.fetcher.DataFetcherCallBack;
 import com.nsg.dp.events.UpdateStatusEvent;
-import com.nsg.dp.multirecycleview.ExpandableRecycleViewFragment;
+import com.nsg.dp.gridsample.GridFragment;
 
 import de.greenrobot.event.EventBus;
 
@@ -45,8 +45,9 @@ public class MainActivity extends AppCompatActivity implements MainActivityPrese
         ft = getSupportFragmentManager().beginTransaction();
 //        SimpleRecycleViewFragment fragmentDemo = SimpleRecycleViewFragment.getInstance();
 //        MultiRecycleViewFragment fragmentDemo = MultiRecycleViewFragment.getInstance();
-        ExpandableRecycleViewFragment fragmentDemo = ExpandableRecycleViewFragment.getInstance();
-        ft.add(R.id.container, fragmentDemo,"sample");
+//        ExpandableRecycleViewFragment fragmentDemo = ExpandableRecycleViewFragment.getInstance();
+        GridFragment fragmentDemo = new GridFragment();
+        ft.add(R.id.container, fragmentDemo, "sample");
         ft.commit();
     }
 
@@ -63,8 +64,8 @@ public class MainActivity extends AppCompatActivity implements MainActivityPrese
         super.onResume();
         EventBus.getDefault().register(this);
 
-        DataFetcher dataFetcher = new AssetDataFetcher(this,"config");
-        dataFetcher.fetch(new DataFetcherCallBack(){
+        DataFetcher dataFetcher = new AssetDataFetcher(this, "config");
+        dataFetcher.fetch(new DataFetcherCallBack() {
 
             @Override
             public void onSuccess(byte[] data) {
