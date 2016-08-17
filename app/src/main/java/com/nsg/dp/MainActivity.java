@@ -3,7 +3,6 @@ package com.nsg.dp;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -12,7 +11,7 @@ import com.nsg.dp.dao.fetcher.AssetDataFetcher;
 import com.nsg.dp.dao.fetcher.DataFetcher;
 import com.nsg.dp.dao.fetcher.DataFetcherCallBack;
 import com.nsg.dp.events.UpdateStatusEvent;
-import com.nsg.dp.gridsample.GridFragment;
+import com.nsg.dp.gridsample.InsideRecycleViewFragment;
 
 import de.greenrobot.event.EventBus;
 
@@ -28,14 +27,14 @@ public class MainActivity extends AppCompatActivity implements MainActivityPrese
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mainActivityPresenter = new MainActivityImplementation(this);
-        button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                mainActivityPresenter.updateStatus();
-            }
-        });
+//        button = (Button) findViewById(R.id.button);
+//        button.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View view) {
+//                mainActivityPresenter.updateStatus();
+//            }
+//        });
         container = (LinearLayout) findViewById(R.id.container);
         loadFragment();
 
@@ -46,8 +45,10 @@ public class MainActivity extends AppCompatActivity implements MainActivityPrese
 //        SimpleRecycleViewFragment fragmentDemo = SimpleRecycleViewFragment.getInstance();
 //        MultiRecycleViewFragment fragmentDemo = MultiRecycleViewFragment.getInstance();
 //        ExpandableRecycleViewFragment fragmentDemo = ExpandableRecycleViewFragment.getInstance();
-        GridFragment fragmentDemo = new GridFragment();
+//        GridFragment fragmentDemo = new GridFragment();
+        InsideRecycleViewFragment fragmentDemo = new InsideRecycleViewFragment();
         ft.add(R.id.container, fragmentDemo, "sample");
+
         ft.commit();
     }
 
