@@ -40,7 +40,6 @@ public class GridFragment extends Fragment {
         recycleView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
 //        ItemOffsetDecoration itemDecoration = new ItemOffsetDecoration(getActivity(), R.dimen.item_offset);
 //        recycleView.addItemDecoration(itemDecoration);
-
         recycleView.setAdapter(new GridAdapter());
 
     }
