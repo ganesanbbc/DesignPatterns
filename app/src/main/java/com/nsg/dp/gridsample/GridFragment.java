@@ -54,7 +54,6 @@ public class GridFragment extends Fragment {
 
         @Override
         public void onBindViewHolder(SampleViewHolder holder, int position) {
-
             holder.textView1.setText("::" + position);
         }
 
